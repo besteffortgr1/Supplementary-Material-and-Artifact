@@ -9,6 +9,8 @@ This directory contains the raw experimental data, batch execution scripts, and 
 
 ## 2 Setting Up the Experimental Environment
 
+First, download the Docker image `best-effort-gr1.tar` from the **Assets** section of the [GitHub Release](https://github.com/besteffortgr1/Supplementary-Material-and-Artifact/releases/tag/v1) page (the file is too large to include in the repository).
+
 Load the Docker image:
 
 ```bash
