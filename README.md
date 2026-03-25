@@ -54,8 +54,11 @@ This script recursively traverses all `.spectra` files in the SPECVER25 dataset 
 **Usage**:
 
 ```bash
-python result1_batch_run.py --spectra-dir dataset --jar bestEffortCheck.jar --output SPECVER25_result1.csv
+python result1_batch_run.py --spectra-dir dataset --jar bestEffortCheck.jar --output local_result1.csv
 ```
+
+Note: Use a different output filename (e.g., `local_result1.csv`) to avoid overwriting the existing raw data file `SPECVER25_result1.csv`.
+
 
 **Output**: `SPECVER25_result1.csv`
 
@@ -65,11 +68,15 @@ python result1_batch_run.py --spectra-dir dataset --jar bestEffortCheck.jar --ou
 
 This script filters specifications from the Phase 1 results that satisfy both of the following conditions: standard GR(1) realizability result is `Unrealizable`, and well-separatedness result is `Well-Separated`. For each filtered specification, it performs best-effort checking with classification (using the `-bec -c` flags) without a timeout limit. The script supports checkpointing; it automatically detects previously processed files before execution to avoid redundant work.
 
+
+
 **Usage**:
 
 ```bash
-python result2_batch_run.py --input SPECVER25_result1.csv --jar bestEffortCheck.jar --output SPECVER25_result2.csv
+python result2_batch_run.py --input local_result1.csv --jar bestEffortCheck.jar --output local_result2.csv
 ```
+
+Note: Use a different output filename (e.g., `local_result2.csv`) to avoid overwriting the existing raw data file `SPECVER25_result2.csv`.
 
 **Output**: `SPECVER25_result2.csv`
 
