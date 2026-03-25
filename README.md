@@ -95,7 +95,6 @@ This file contains the Phase 1 experimental results, with a header line `Spectra
 
 Rows with fewer than 4 fields are non-valid entries that may contain status markers such as `TIMEOUT`, `UNKNOWN`, or `ERROR`, and are excluded from the analysis.
 
-The file contains 10,137 data rows (plus 1 header row), of which 8,249 are valid records and 1,888 are non-valid entries (1,284 timeouts, 380 unknown, 224 errors).
 
 ### 5.2 SPECVER25_result2.csv
 
@@ -111,19 +110,12 @@ This file contains the Phase 2 experimental results, with no header line. Each r
 
 The file contains 2,081 rows, corresponding to all well-separated and unrealizable specifications from Phase 1.
 
-**Mapping to paper categories** (Table 2):
-
-| Paper Category | Definition | CSV Condition |
-|----------------|------------|---------------|
-| Extended | Z_std ≠ ∅ | Column 2 = `Realizable` AND Column 5 = `Expand` |
-| Constructed | Z_std = ∅, ι ⊆ Z_BE | Column 2 = `Realizable` AND Column 5 = `Construct` |
-| Trapped | ι ⊄ Z_BE | Column 2 = `Unrealizable` |
 
 ## 6 Data Analysis Scripts
 
 ### 6.1 result1_analysis.py (RQ1 Data Analysis)
 
-This script parses `SPECVER25_result1.csv` and computes the statistics required for Table 1 (RQ1), including: total number of valid specifications, number of realizable and unrealizable specifications, well-separated and non-well-separated breakdown of unrealizable specifications, and best-effort realizable and not best-effort realizable counts. The script outputs a formatted statistics table, LaTeX-ready table rows, and narrative text drafts.
+This script parses `SPECVER25_result1.csv` and computes the statistics required for Table 1 (RQ1).
 
 **Usage**:
 
@@ -133,13 +125,7 @@ python result1_analysis.py SPECVER25_result1.csv
 
 ### 6.2 result2_analysis.py (RQ2 Data Analysis)
 
-This script parses `SPECVER25_result2.csv` and computes the three-category classification statistics required for Table 2 (RQ2). The classification rules are as follows:
-
-| Category | Condition | Meaning |
-|----------|-----------|---------|
-| Extended | BE-realizable AND Expand | Standard winning region is non-empty; best-effort winning region extends it |
-| Constructed | BE-realizable AND Construct | Standard winning region is empty; best-effort winning region is constructed from scratch |
-| Trapped | BE-unrealizable | Initial states are outside the best-effort winning region; environment has an absolute counter-strategy |
+This script parses `SPECVER25_result2.csv` and computes the three-category classification statistics required for Table 2 (RQ2). 
 
 **Usage**:
 
