@@ -28,7 +28,7 @@ Inside the container, in the `/workspace` directory, copy the BDD library to the
 ```bash
 cp libcudd.so /usr/lib
 ```
-
+We have tested and verified the container on Ubuntu 22.04.
 ## 3 Directory Contents
 
 | File | Description |
