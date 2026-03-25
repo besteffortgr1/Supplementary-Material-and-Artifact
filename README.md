@@ -73,7 +73,7 @@ This script filters specifications from the Phase 1 results that satisfy both of
 **Usage**:
 
 ```bash
-python result2_batch_run.py --input local_result1.csv --jar bestEffortCheck.jar --output local_result2.csv
+python result2_batch_run.py --input SPECVER25_result1.csv --jar bestEffortCheck.jar --output local_result2.csv
 ```
 
 Note: Use a different output filename (e.g., `local_result2.csv`) to avoid overwriting the existing raw data file `SPECVER25_result2.csv`.
